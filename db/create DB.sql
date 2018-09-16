@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `coop`.`usuarios` (
   `create_time` TIMESTAMP NULL,
   `last_login` TIMESTAMP NULL,
   PRIMARY KEY (`id_usuarios`, `usuario`),
-  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC) VISIBLE,
-  UNIQUE INDEX `id_usuarios_UNIQUE` (`id_usuarios` ASC) VISIBLE)
+  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC),
+  UNIQUE INDEX `id_usuarios_UNIQUE` (`id_usuarios` ASC))
 ENGINE = InnoDB;
 
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `coop`.`aportes` (
   `monto` DECIMAL NOT NULL,
   `fecha_aporte` TIMESTAMP NULL,
   PRIMARY KEY (`idaportes`),
-  UNIQUE INDEX `idaportes_UNIQUE` (`idaportes` ASC) VISIBLE)
+  UNIQUE INDEX `idaportes_UNIQUE` (`idaportes` ASC))
 ENGINE = InnoDB;
 
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `coop`.`documentacion` (
   `monto_factura` DECIMAL NULL,
   `fecha_subida` DATE NULL,
   PRIMARY KEY (`iddocumentacion`, `idproyectos`),
-  INDEX `fk_documentacion_proyectos_idx` (`idproyectos` ASC) VISIBLE,
+  INDEX `fk_documentacion_proyectos_idx` (`idproyectos` ASC),
   CONSTRAINT `fk_documentacion_proyectos`
     FOREIGN KEY (`idproyectos`)
     REFERENCES `coop`.`proyectos` (`idproyectos`)
