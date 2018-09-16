@@ -18,8 +18,8 @@
             echo $this->Form->control('usuario');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
-            echo $this->Form->control('create_time');
-            echo $this->Form->control('last_login');
+/*            echo $this->Form->control('create_time');
+            echo $this->Form->control('last_login');*/
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

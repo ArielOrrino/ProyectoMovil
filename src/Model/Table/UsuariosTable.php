@@ -52,9 +52,7 @@ class UsuariosTable extends Table
         $validator
             ->scalar('usuario')
             ->maxLength('usuario', 30)
-            ->requirePresence('usuario', 'create')
-            ->notEmpty('usuario')
-            ->add('usuario', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->allowEmpty('usuario', 'create');
 
         $validator
             ->email('email')
@@ -87,7 +85,6 @@ class UsuariosTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-        $rules->add($rules->isUnique(['usuario']));
         $rules->add($rules->isUnique(['id_usuarios']));
 
         return $rules;
