@@ -15,11 +15,14 @@
     <fieldset>
         <legend><?= __('Add Usuario') ?></legend>
         <?php
+       date_default_timezone_set("America/Argentina/Buenos_Aires");
+        $now = date('Y-m-d H:i:s',Time());
+
             echo $this->Form->control('usuario');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
-/*            echo $this->Form->control('create_time');
-            echo $this->Form->control('last_login');*/
+            echo $this->Form->control('create_time', ['type' => 'hidden', 'value' => $now]);
+            echo $this->Form->control('last_login', ['type' => 'hidden', 'value' => $now]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
