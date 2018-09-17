@@ -30,7 +30,18 @@
                 <td><?= $this->Number->format($usuario->id_usuarios) ?></td>
                 <td><?= h($usuario->usuario) ?></td>
                 <td><?= h($usuario->email) ?></td>
-                <td><?= h($usuario->password) ?></td>
+                <td><input value= "<?= h($usuario->password) ?>" type ="password" id="myInput" readonly>
+                    <input type="checkbox" onclick="myFunction()"></td>
+                        <script> 
+                            function myFunction() {
+                            var x = document.getElementById("myInput");
+                            if (x.type === "password") {
+                                   x.type = "text";
+                                } else {
+                                  x.type = "password";
+                                }
+                             }
+                        </script> 
                 <td><?= h($usuario->create_time) ?></td>
                 <td><?= h($usuario->last_login) ?></td>
                 <td class="actions">
