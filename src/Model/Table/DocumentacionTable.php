@@ -33,7 +33,7 @@ class DocumentacionTable extends Table
 
         $this->setTable('documentacion');
         $this->setDisplayField('iddocumentacion');
-        $this->setPrimaryKey(['iddocumentacion', 'idproyectos']);
+        $this->setPrimaryKey('iddocumentacion');
     }
 
     /**

@@ -16,7 +16,9 @@
         <legend><?= __('Agregar Documentacion') ?></legend>
         <?php
             date_default_timezone_set("America/Argentina/Buenos_Aires");
-            $now = date('Y-m-d H:i:s',Time());
+            $now = date('Y-m-d',Time());
+            echo $this->Form->control('idproyectos', ['label' => 'corresponde al proyecto:']);
+            echo $this->Form->control('factura');
             echo $this->Form->control('monto_factura');
             echo $this->Form->control('fecha_subida', ['type' => 'hidden', 'value' => $now]);
         ?>
