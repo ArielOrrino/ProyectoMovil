@@ -6,11 +6,11 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Aporte'), ['action' => 'edit', $aporte->idaportes]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Aporte'), ['action' => 'delete', $aporte->idaportes], ['confirm' => __('Are you sure you want to delete # {0}?', $aporte->idaportes)]) ?> </li>
-        <li><?= $this->Html->link(__('List Aportes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Aporte'), ['action' => 'add']) ?> </li>
+        <li class="heading"><?= __('Modulos') ?></li>
+        <li><?= $this->Html->link(__('Editar Aporte'), ['action' => 'edit', $aporte->idaportes]) ?> </li>
+        <li><?= $this->Form->postLink(__('Borrar Aporte'), ['action' => 'delete', $aporte->idaportes], ['confirm' => __('Esta seguro que desea eliminar el aporte # {0}?', $aporte->idaportes)]) ?> </li>
+        <li><?= $this->Html->link(__('Listar Aportes'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nuevo Aporte'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="aportes view large-9 medium-8 columns content">

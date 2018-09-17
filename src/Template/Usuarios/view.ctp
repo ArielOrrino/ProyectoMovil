@@ -6,11 +6,11 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Usuario'), ['action' => 'edit', $usuario->id_usuarios]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Usuario'), ['action' => 'delete', $usuario->id_usuarios], ['confirm' => __('Are you sure you want to delete # {0}?', $usuario->id_usuarios)]) ?> </li>
-        <li><?= $this->Html->link(__('List Usuarios'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Usuario'), ['action' => 'add']) ?> </li>
+        <li class="heading"><?= __('Modulos') ?></li>
+        <li><?= $this->Html->link(__('Editar Usuario'), ['action' => 'edit', $usuario->id_usuarios]) ?> </li>
+        <li><?= $this->Form->postLink(__('Borrar Usuario'), ['action' => 'delete', $usuario->id_usuarios], ['confirm' => __('Esta seguro que desea eliminar el usuario # {0}?', $usuario->id_usuarios)]) ?> </li>
+        <li><?= $this->Html->link(__('Lista de Usuarios'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="usuarios view large-9 medium-8 columns content">

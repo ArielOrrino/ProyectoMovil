@@ -52,11 +52,11 @@ class DocumentacionController extends AppController
         if ($this->request->is('post')) {
             $documentacion = $this->Documentacion->patchEntity($documentacion, $this->request->getData());
             if ($this->Documentacion->save($documentacion)) {
-                $this->Flash->success(__('The documentacion has been saved.'));
+                $this->Flash->success(__('La documentacion ha sido guardada con exito.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The documentacion could not be saved. Please, try again.'));
+            $this->Flash->error(__('La documentacion no pudo ser guardada.'));
         }
         $this->set(compact('documentacion'));
     }
@@ -76,11 +76,11 @@ class DocumentacionController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $documentacion = $this->Documentacion->patchEntity($documentacion, $this->request->getData());
             if ($this->Documentacion->save($documentacion)) {
-                $this->Flash->success(__('The documentacion has been saved.'));
+                $this->Flash->success(__('La documentacion ha sido guardada con exito'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The documentacion could not be saved. Please, try again.'));
+            $this->Flash->error(__('La documentacion no pudo ser guardada.'));
         }
         $this->set(compact('documentacion'));
     }
@@ -97,9 +97,9 @@ class DocumentacionController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $documentacion = $this->Documentacion->get($id);
         if ($this->Documentacion->delete($documentacion)) {
-            $this->Flash->success(__('The documentacion has been deleted.'));
+            $this->Flash->success(__('La documentacion ha sido eliminada con exito'));
         } else {
-            $this->Flash->error(__('The documentacion could not be deleted. Please, try again.'));
+            $this->Flash->error(__('La documentacion no ha podido ser eliminada.'));
         }
 
         return $this->redirect(['action' => 'index']);

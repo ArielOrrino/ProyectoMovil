@@ -52,11 +52,11 @@ class AportesController extends AppController
         if ($this->request->is('post')) {
             $aporte = $this->Aportes->patchEntity($aporte, $this->request->getData());
             if ($this->Aportes->save($aporte)) {
-                $this->Flash->success(__('The aporte has been saved.'));
+                $this->Flash->success(__('El aporte ha sido registrado con exito.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The aporte could not be saved. Please, try again.'));
+            $this->Flash->error(__('El aporte no se puedo registrar.'));
         }
         $this->set(compact('aporte'));
     }
@@ -76,11 +76,11 @@ class AportesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $aporte = $this->Aportes->patchEntity($aporte, $this->request->getData());
             if ($this->Aportes->save($aporte)) {
-                $this->Flash->success(__('The aporte has been saved.'));
+                $this->Flash->success(__('El aporte ha sido registrado con exito.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The aporte could not be saved. Please, try again.'));
+            $this->Flash->error(__('El aporte no se puedo registrar.'));
         }
         $this->set(compact('aporte'));
     }
@@ -97,9 +97,9 @@ class AportesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $aporte = $this->Aportes->get($id);
         if ($this->Aportes->delete($aporte)) {
-            $this->Flash->success(__('The aporte has been deleted.'));
+            $this->Flash->success(__('El aporte ha sido eliminado con exito.'));
         } else {
-            $this->Flash->error(__('The aporte could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El aporte no ha podido ser eliminado.'));
         }
 
         return $this->redirect(['action' => 'index']);
