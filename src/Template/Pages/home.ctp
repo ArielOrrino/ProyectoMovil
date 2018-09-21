@@ -27,7 +27,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
+$cakeDescription = 'Cooperativa UTN';
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +47,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <body class="home">
 
 <header class="row">
-    <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
+    <div class="header-image"><?= $this->Html->image('utn-logo.png') ?></div>
     <div class="header-title">
         <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
     </div>

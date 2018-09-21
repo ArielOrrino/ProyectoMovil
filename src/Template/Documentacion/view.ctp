@@ -25,12 +25,20 @@
             <td><?= $this->Number->format($documentacion->idproyectos) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('factura') ?></th>
+            <td><?php echo $this->Html->link('View File', array('controller' => 'Documentacion', 'action' => 'download', $documentacion->iddocumentacion));?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Monto Factura') ?></th>
             <td><?= $this->Number->format($documentacion->monto_factura) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Fecha Subida') ?></th>
             <td><?= h($documentacion->fecha_subida) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('nombre del archivo') ?></th>
+            <td><?= h(stream_get_contents($documentacion->factura)) ?></td>
         </tr>
     </table>
 </div>
