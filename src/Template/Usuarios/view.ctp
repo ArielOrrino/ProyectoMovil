@@ -27,17 +27,7 @@
         <tr>
             <th scope="row"><?= __('Password') ?></th>
             <td><input value= "<?= h($usuario->password) ?>" type ="password" id="myInput" maxlength="8" size="8" readonly>
-            <input type="checkbox" onclick="myFunction()"></td>
-                        <script> 
-                            function myFunction() {
-                            var x = document.getElementById("myInput");
-                            if (x.type === "password") {
-                                   x.type = "text";
-                                } else {
-                                  x.type = "password";
-                                }
-                             }
-                        </script> 
+            <input type="checkbox" onclick="myFunction()"></td>                        
         </tr>
         <tr>
             <th scope="row"><?= __('Id Usuarios') ?></th>

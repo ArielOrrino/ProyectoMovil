@@ -28,6 +28,8 @@ $cakeDescription = 'Cooperativa UTN';?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
 
+    <?= $this->Html->script('funciones.js') ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>

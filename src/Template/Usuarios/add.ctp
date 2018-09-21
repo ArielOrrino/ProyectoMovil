@@ -20,7 +20,8 @@
 
             echo $this->Form->control('usuario');
             echo $this->Form->control('email');
-            echo $this->Form->control('password', ['maxlength'=>"8", 'size'=>"8", 'id'=>'myinput']);
+            echo $this->Form->control('password', ['maxlength'=>"8", 'size'=>"8", 'id'=>'myInput']);
+            echo $this->form->input('Mostrar contraseña', ['type'=>'checkbox','onClick'=>'myFunction()']);
             echo $this->Form->control('create_time', ['type' => 'hidden', 'value' => $now]);
             echo $this->Form->control('last_login', ['type' => 'hidden', 'value' => $now]);
         ?>
