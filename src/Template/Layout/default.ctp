@@ -41,10 +41,10 @@ $cakeDescription = 'Cooperativa UTN';?>
         </ul>
         <div class="top-bar-section">
             <ul class="left">
-                <li><a href="../usuarios">Usuarios</a></li>
-                <li><a href="../aportes">Aportes</a></li>
-                <li><a href="../proyectos">Proyectos</a></li>
-                <li><a href="../documentacion">Documentacion</a></li>
+                <li><a href="../../usuarios">Usuarios</a></li>
+                <li><a href="../../aportes">Aportes</a></li>
+                <li><a href="../../proyectos">Proyectos</a></li>
+                <li><a href="../../documentacion">Documentacion</a></li>
             </ul>
         </div>
     </nav>
