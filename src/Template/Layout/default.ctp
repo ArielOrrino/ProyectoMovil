@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'Cooperativa UTN';?>
+$cakeDescription = 'Cooperativa alumnos UTN';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +43,7 @@ $cakeDescription = 'Cooperativa UTN';?>
         </ul>
         <div class="top-bar-section">
             <ul class="left">
+                <li><a href="../../">Inicio</a></li>
                 <li><a href="../../usuarios">Usuarios</a></li>
                 <li><a href="../../aportes">Aportes</a></li>
                 <li><a href="../../proyectos">Proyectos</a></li>
