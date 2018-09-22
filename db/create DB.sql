@@ -15,6 +15,22 @@ CREATE SCHEMA IF NOT EXISTS `cooperativa` DEFAULT CHARACTER SET utf8 COLLATE utf
 USE `cooperativa` ;
 
 -- -----------------------------------------------------
+-- Table `cooperativa`.`aportes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cooperativa`.`aportes` (
+  `idaportes` INT(11) NOT NULL AUTO_INCREMENT,
+  `monto` DECIMAL(10,0) NOT NULL,
+  `fecha_aporte` TIMESTAMP NULL DEFAULT NULL,
+  `proyectos_idproyectos` INT(11) NULL,
+  PRIMARY KEY (`idaportes`),
+  UNIQUE INDEX `idaportes_UNIQUE` (`idaportes` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+-- -----------------------------------------------------
 -- Table `cooperativa`.`proyectos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cooperativa`.`proyectos` (
@@ -25,31 +41,9 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`proyectos` (
   `fecha_finalizado` DATE NULL DEFAULT NULL,
   `cantidad_votos` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idproyectos`),
-  UNIQUE INDEX `idproyectos_UNIQUE` (`idproyectos` ASC) )
+  UNIQUE INDEX `idproyectos_UNIQUE` (`idproyectos` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
-
-
--- -----------------------------------------------------
--- Table `cooperativa`.`aportes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cooperativa`.`aportes` (
-  `idaportes` INT(11) NOT NULL AUTO_INCREMENT,
-  `monto` DECIMAL(10,0) NOT NULL,
-  `fecha_aporte` TIMESTAMP NULL DEFAULT NULL,
-  `proyectos_idproyectos` INT(11) NOT NULL,
-  PRIMARY KEY (`idaportes`),
-  UNIQUE INDEX `idaportes_UNIQUE` (`idaportes` ASC) ,
-  INDEX `fk_aportes_proyectos1_idx` (`proyectos_idproyectos` ASC) ,
-  CONSTRAINT `fk_aportes_proyectos1`
-    FOREIGN KEY (`proyectos_idproyectos`)
-    REFERENCES `cooperativa`.`proyectos` (`idproyectos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -64,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`documentacion` (
   `monto_factura` DECIMAL(12,2) NULL DEFAULT NULL,
   `fecha_subida` DATE NULL DEFAULT NULL,
   PRIMARY KEY (`iddocumentacion`),
-  INDEX `fk_documentacion_proyectos_idx` (`idproyectos` ASC) ,
+  INDEX `fk_documentacion_proyectos_idx` (`idproyectos` ASC) VISIBLE,
   CONSTRAINT `fk_documentacion_proyectos`
     FOREIGN KEY (`idproyectos`)
     REFERENCES `cooperativa`.`proyectos` (`idproyectos`)
@@ -88,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`usuarios` (
   `last_login` TIMESTAMP NULL DEFAULT NULL,
   `tipo_usuario` VARCHAR(1) NULL,
   PRIMARY KEY (`id_usuarios`),
-  UNIQUE INDEX `id_usuarios_UNIQUE` (`id_usuarios` ASC) )
+  UNIQUE INDEX `id_usuarios_UNIQUE` (`id_usuarios` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 15
 DEFAULT CHARACTER SET = utf8
