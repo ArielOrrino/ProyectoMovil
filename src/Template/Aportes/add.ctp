@@ -18,6 +18,7 @@
             date_default_timezone_set("America/Argentina/Buenos_Aires");
             $now = date('Y-m-d H:i:s',Time());
             echo $this->Form->control('monto');
+            echo $this->Form->control('proyectos_idproyectos');
             echo $this->Form->control('fecha_aporte', ['type' => 'hidden', 'value' => $now]);
         ?>
     </fieldset>

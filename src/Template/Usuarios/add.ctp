@@ -24,6 +24,7 @@
             echo $this->form->input('Mostrar contraseña', ['type'=>'checkbox','onClick'=>'myFunction()']);
             echo $this->Form->control('create_time', ['type' => 'hidden', 'value' => $now]);
             echo $this->Form->control('last_login', ['type' => 'hidden', 'value' => $now]);
+            echo $this->Form->control('tipo_usuario', ['maxlength'=>"1", 'size'=>"1"]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submitir')) ?>

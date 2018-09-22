@@ -20,8 +20,19 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="generator" content="Webnode 2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="Cooperativa Alumnos Utn">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Cooperativa Alumnos Utn">
+    <script type="text/javascript" src="https://d1di2lzuh97fh2.cloudfront.net/files/3f/3fw/3fwae8.js?ph=a0eca4f8da"></script>
+    
     <title>Cooperativa alumnos UTN</title>
     <link href="https://d1di2lzuh97fh2.cloudfront.net/files/3r/3rx/3rxffv.css?ph=a0eca4f8da" rel="stylesheet">
      <?= $this->Html->meta('icon') ?> 
@@ -98,7 +109,10 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                     </li>                                                   
                                                 </ul>                                               
                                             </div>
-                                        </nav>                                      
+                                        </nav>  
+                                        <div id="menu-mobile" class="">
+                                             <a href="#" id="menu-submit"><span></span>Menú</a>
+                                         </div>                                    
                                     </div>
                                 </div>
                                 <div class="section-inner section-claim">

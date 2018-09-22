@@ -17,7 +17,8 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('idaportes') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('monto') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fecha_aporte') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('proyectos_idproyectos') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fecha_aporte') ?></th> 
                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
             <tr>
                 <td><?= $this->Number->format($aporte->idaportes) ?></td>
                 <td><?= $this->Number->format($aporte->monto) ?></td>
+                <td><?= $this->Number->format($aporte->proyectos_idproyectos) ?></td>
                 <td><?= h($aporte->fecha_aporte) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $aporte->idaportes]) ?>

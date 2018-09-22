@@ -25,6 +25,10 @@
             <td><?= $this->Number->format($aporte->monto) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('id proyecto') ?></th>
+            <td><?= h($aporte->proyectos_idproyectos) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Fecha Aporte') ?></th>
             <td><?= h($aporte->fecha_aporte) ?></td>
         </tr>

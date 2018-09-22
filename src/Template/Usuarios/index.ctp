@@ -19,6 +19,7 @@
                 <th scope="col"><?= $this->Paginator->sort('usuario') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('tipo_usuario') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('create_time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_login') ?></th>
                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
@@ -31,7 +32,7 @@
                 <td><?= h($usuario->usuario) ?></td>
                 <td><?= h($usuario->email) ?></td>
                 <td><input value= "<?= h($usuario->password) ?>" type ="password" id="myInput" readonly></td>
-                    
+                <td><?= h($usuario->tipo_usuario) ?></td>    
                 <td><?= h($usuario->create_time) ?></td>
                 <td><?= h($usuario->last_login) ?></td>
                 <td class="actions">
