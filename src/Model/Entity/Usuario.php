@@ -29,6 +29,7 @@ class Usuario extends Entity
         'usuario' => true,
         'email' => true,
         'password' => true,
+        'tipo_usuario' => true,
         'create_time' => true,
         'last_login' => true
     ];

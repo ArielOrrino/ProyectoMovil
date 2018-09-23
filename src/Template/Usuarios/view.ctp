@@ -34,6 +34,10 @@
             <td><?= $this->Number->format($usuario->id_usuarios) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Tipo_usuario') ?></th>
+            <td><?= h($usuario->tipo_usuario) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Create Time') ?></th>
             <td><?= h($usuario->create_time) ?></td>
         </tr>
