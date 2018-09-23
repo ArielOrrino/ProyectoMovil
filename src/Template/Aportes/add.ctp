@@ -3,23 +3,30 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Aporte $aporte
  */
-   require_once ('mercadopago.php');
-    
-    $mp = new MP ("7261628270430202", "l4QDNZqgIrBcKa4fg9ZYvLdsh9PYb9Bf");
 
-    $preference_data = array(
-      "items" => array(
-            array(
-                "title" => "Donaciones",
-                "quantity" => 1,
-                "currency_id" => "ARS", 
-                "unit_price" => 10.00
-            )
-        )
-    );
-    $preference = $mp->create_preference($preference_data);
-    
-    print_r ($preference);
+  MercadoPago\SDK::setClientId("7261628270430202");
+  MercadoPago\SDK::setClientSecret("l4QDNZqgIrBcKa4fg9ZYvLdsh9PYb9Bf");
+?>
+
+<?php
+  # Create a preference object
+  $preference = new MercadoPago\Preference();
+  # Create an item object
+  $item = new MercadoPago\Item();
+  $item->id = "1234";
+  $item->title = "Cooperativa Utn La Plata";
+  $item->quantity = 1;
+  $item->currency_id = "ARS";
+  $item->unit_price = 100;
+  # Create a payer object
+  $payer = new MercadoPago\Payer();
+  //$payer->email = "cary@yahoo.com";
+  # Setting preference properties
+  $preference->items = array($item);
+  $preference->payer = $payer;
+  # Save and posting preference
+  $preference->save();
+
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -41,6 +48,5 @@
     </fieldset>
     <?= $this->Form->button(__('Submitir')) ?>
     <?= $this->Form->end() ?>
-    <a href="<?php echo $preference['response']['add']; ?>">Pay</a>
-    <script type="text/javascript" src="https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js"></script>
+   <a href="<?php echo $preference->init_point; ?>">Pay</a>
 </div>
