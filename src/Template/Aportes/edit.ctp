@@ -22,6 +22,7 @@
         <legend><?= __('Editar Aporte') ?></legend>
         <?php
             echo $this->Form->control('monto');
+            echo $this->Form->control('proyectos_idproyectos');
             echo $this->Form->control('fecha_aporte');
         ?>
     </fieldset>

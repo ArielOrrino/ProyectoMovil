@@ -72,6 +72,11 @@ class UsuariosTable extends Table
             ->dateTime('last_login')
             ->allowEmpty('last_login');
 
+        $validator
+            ->scalar('tipo_usuario')
+            ->maxLength('tipo_usuario', 1)
+            ->allowEmpty('tipo_usuario', 'create');
+
         return $validator;
     }
 

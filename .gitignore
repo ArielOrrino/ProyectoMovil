@@ -39,3 +39,5 @@ nbproject/*
 # Sass preprocessor
 .sass-cache/
 *.sql
+config/app.php
+vendor.rar
