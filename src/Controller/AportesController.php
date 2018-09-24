@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use MercadoPago;
 /**
  * Aportes Controller
  *
@@ -23,6 +23,33 @@ class AportesController extends AppController
         $aportes = $this->paginate($this->Aportes);
 
         $this->set(compact('aportes'));
+    }
+
+     public function mp($monto)
+    {
+
+        MercadoPago\SDK::setClientId("7261628270430202");
+        MercadoPago\SDK::setClientSecret("l4QDNZqgIrBcKa4fg9ZYvLdsh9PYb9Bf");
+
+        # Create a preference object
+        $preference = new MercadoPago\Preference();
+        # Create an item object
+        $item = new MercadoPago\Item();
+        $item->id = "1234";
+        $item->title = "Cooperativa Utn La Plata";
+        $item->quantity = 1;
+        $item->currency_id = "ARS";
+        $item->unit_price = $monto;
+        # Create a payer object
+        $payer = new MercadoPago\Payer();
+        //$payer->email = "cary@yahoo.com";
+        # Setting preference properties
+        $preference->items = array($item);
+        $preference->payer = $payer;
+        # Save and posting preference
+        $preference->save();
+
+        $this->redirect("$preference->init_point");
     }
 
     /**
