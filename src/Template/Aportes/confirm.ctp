@@ -14,17 +14,16 @@
 <div class="aportes form large-9 medium-8 columns content">
     <?= $this->Form->create($aporte) ?>
     <fieldset>
-        <legend><?= __('Agregar Aporte') ?></legend>
+        <legend><?= __('Confirmar Donación') ?></legend>
         <?php
             date_default_timezone_set("America/Argentina/Buenos_Aires");
             $now = date('Y-m-d H:i:s',Time());
-            echo $this->Form->control('monto', ['id' => 'monto']);
-            $monto1 = (float)$this->Form->control('monto');
+            $MD = $this->request->params['pass'][0];
+            echo $this->Form->control('monto', ['id' => 'monto', 'value'=>$MD, 'readonly']);
             echo $this->Form->control('proyectos_idproyectos', ['type' => 'hidden']);
             echo $this->Form->control('fecha_aporte', ['type' => 'hidden', 'value' => $now]);            
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submitir')) ?>
-    <?php echo $this->Form->control('MercadoPago', ['type'=>'button','id' => 'boton', 'onClick'=>'guardarMonto()']);?>  
+    <?php echo $this->Html->link(('Donar'), ['action' => 'mp', $MD],array('class' => 'button'));?>  
     <?= $this->Form->end() ?>
 </div>

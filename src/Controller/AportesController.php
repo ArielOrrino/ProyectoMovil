@@ -25,6 +25,21 @@ class AportesController extends AppController
         $this->set(compact('aportes'));
     }
 
+    public function confirm()
+    {
+        $aporte = $this->Aportes->newEntity();
+        if ($this->request->is('post')) {
+            $aporte = $this->Aportes->patchEntity($aporte, $this->request->getData());
+            if ($this->Aportes->save($aporte)) {
+                $this->Flash->success(__('El aporte ha sido registrado con exito.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('El aporte no se puedo registrar.'));
+        }
+        $this->set(compact('aporte'));
+    }
+
      public function mp($monto)
     {
 

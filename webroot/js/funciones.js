@@ -7,9 +7,13 @@ function myFunction() {
     }
 }
 
-function pagoMP(monto) {
-	
-	console.log(monto);
-	alert("Hello! I am an alert box!! and the monto is " + monto);
+
+function guardarMonto() {
+    var montoDonacion = document.getElementById("monto").value;
+    redirigirMp(montoDonacion);
 }
+
+function redirigirMp(MD) {
+	    window.location = "confirm/"+MD;
+	}
                  
