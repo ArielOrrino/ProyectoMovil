@@ -49,16 +49,16 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-    <body class="layout-03 wn-hp desktop">
+    <body>
  <div class="contenedor-form" id='toggle'>
         <div class="toggle">
             <span>Crear Cuenta</span>   
         </div>
         <div class="formulario session" id='test'>
             <h2>Iniciar Sesión</h2>
-            <form action="#">
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
+            <form action="validar.php" method="post">
+                <input type="text" placeholder="Usuario" name="usuario" required>
+                <input type="password" placeholder="Contraseña" name="clave" required>
                 <input type="submit" value="Iniciar Sesión">
             </form>
         </div>

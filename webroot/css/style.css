@@ -56,7 +56,7 @@ body {
 	font-size: 20px;
 	font-weight: 400px;
 	line-height: 1px;
-}
+} 
 
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
@@ -315,7 +315,7 @@ input[type=radio] {
 
 .view h2 {
     color: #6F6F6F;
-}
+} 
 
 .view .columns.strings {
     border-radius: 3px;
