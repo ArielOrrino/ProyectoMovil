@@ -34,19 +34,19 @@ class UsuariosController extends AppController
                 }
                 else 
                 {
-                    $this->Flash->error('Datos incorrectos puto, me queres hackear?', ['key'=>'auth']);
+                    $this->Flash->error('Datos incorrectos puto, me queres hackear?');
                 }
             }
     }
 
 
 
-    public function index()
+/*    public function index()
     {
         $usuarios = $this->paginate($this->Usuarios);
 
         $this->set(compact('usuarios'));
-    }
+    }*/
 
     /**
      * View method

@@ -41,33 +41,30 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
+        $this->loadComponent('RequestHandler'); 
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
-            'authorize' => ['Controller'],
-            'authenticate' => [
-                'Form' => [
-                'fields' => ['username' => 'usuario',
-                'password'=>'password'
-            ]
-            ]
-            ],
-            'loginAction' => [
-                'controller' => 'Pages',
-                'action' => 'login'
-            ],
-            'authError' => 'Ingrese sus datos sdasdasd',
-            'loginRedirect' => [
-                'controller' => 'asd', 
-                'action' => 'home'
-            ],
-            'logoutRedirect' => [
-                'controller' => 'asd', 
-                'action' => 'login'
-            ]
-            ]);       // $this->loadComponent('Csrf');
+                                     'authorize' => ['Controller'],
+                                     'loginAction' => 
+                                     [
+                                        'controller' => 'pages',
+                                        'action' => 'login'
+                                     ],
+                                     'loginRedirect' => 
+                                     [
+                                        'controller' => 'pages', 
+                                        'action' => 'index'
+                                     ],
+                                     'authenticate' => [
+                                        'Form' => [
+                                            'fields' => ['username' => "user"],
+                                            'userModel' => 'usuarios',
+                                            'finder'=> "auth"
+                                            ]
+                                        ],
+                                     'storage' => 'Session',
+                                     'unauthorizedRedirect' => ['controller' => 'Pages', 'action' => 'Display']
+                            ]);  
 
         /*
          * Enable the following component for recommended CakePHP security settings.
@@ -79,4 +76,51 @@ class AppController extends Controller
     public function isAuthorized($user) {
         return true;
     }
+ public function beforeFilter(Event $event)
+    {
+        /*if (in_array($this->request->params['action'],['login','add','delete','index','edit','modal'] )) {
+            $this->eventManager()->off($this->Csrf);
+        }
+        $this->Security->setConfig('unlockedActions', ['index','login','add','delete','edit','modal']);*/
+        
+        //Rutas
+
+        //usuario sin loggear
+        if($this->Auth->user() && $this->request->controller != 'Pages'){
+            $id = $this->Auth->user('id_usuarios');
+            $usuarios = TableRegistry::get('Usuarios');
+            $usuarios->setLastConection($id);
+        }
+        if(in_array($this->request->getParam('controller'),['Usuarios','Aportes','Documentacion','Proyectos'])){
+            if(in_array($this->request->getParam('action'),['index','display'])){
+                $this->Auth->allow(['index','display']);
+            }
+        }
+        if(in_array($this->request->getParam('controller'),['Noticias'])){
+                $this->Auth->allow(['ver','byuser']);
+        }
+        $this->Auth->allow(['login','logout','registro']);
+        
+        //redactor
+        if($this->Auth->user()){
+            if(in_array($this->request->getParam('controller'),['Post'])){
+                $this->Auth->allow(['index']);
+            }
+            if(in_array($this->request->getParam('controller'),['Noticias'])){
+                $this->Auth->allow(['add','edit','delete']);
+            }
+            if (in_array($this->request->getParam('controller'),['Usuarios'])){
+                $this->Auth->allow(['view','edit','panel']);
+            }
+            $this->Auth->allow(['get']);
+
+        }
+
+       
+    }
+ /*   public function beforeFilter(Event $event)
+    {
+    parent::beforeFilter($event);
+    $this->Auth->allow();
+    }*/
 }

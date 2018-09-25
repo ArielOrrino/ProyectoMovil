@@ -83,8 +83,8 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         </a>            
                                                     </li>
                                                     <li>
-                                                        <a href="../../usuarios"">
-                                                            <span>Usuarios</span>
+                                                        <a href="../../users"">
+                                                            <span>users</span>
                                                         </a>        
                                                     </li>
                                                     <li>
