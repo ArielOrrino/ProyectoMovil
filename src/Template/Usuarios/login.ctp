@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;

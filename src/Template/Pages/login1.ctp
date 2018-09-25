@@ -21,8 +21,6 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <?= $this->Html->css('login.css') ?>
-    <?= $this->Html->css('estilos.css') ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="generator" content="Webnode 2">
@@ -58,40 +56,28 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
         </div>
         <div class="formulario session" id='test'>
             <h2>Iniciar Sesión</h2>
-			<?=$this->Flash->render('Auth') ?>
-			<?=$this->Form->create() ?>
-            <fieldset>
-               
-           
-            	<?= $this->Form->control('usuario', ['type'=>'text', 'placeholder' => 'usuario', 'label'=>false, 'required']) ?>
-                <!-- // <input type="text" placeholder="Usuario" name="usuario" required> -->
-                <?= $this->Form->control('password', ['type'=>'password', 'required', 'placeholder' => 'password', 'label'=>false,
-                'required']) ?>
-              <!--   // <input type="password" placeholder="Contraseña" name="clave" required> -->
-                <?= $this->Form->button('Iniciar Sesion') ?>
-
-                <?= $this->Form->Html->link('Registrarse',['controller'=>'usuarios','action'=>'add'],['class'=>'button']) ?>
-                <!-- // <input type="submit" value="Iniciar Sesión"> -->
-                </fieldset>
-            <?=$this->Form->end() ?>
+            <form action="validar.php" method="post">
+                <input type="text" placeholder="Usuario" name="usuario" required>
+                <input type="password" placeholder="Contraseña" name="clave" required>
+                <input type="submit" value="Iniciar Sesión">
+               <span> <?= $token = $this->request->getParam('_csrfToken');?> </span> 
+            </form>
         </div>
 
-       <!--  <div class="formulario create" id='test2'>
+        <div class="formulario create" id='test2'>
             <h2>Crea tu Cuenta</h2>
-
-            <?=$this->Form->create() ?>
+            <form action="#">
                 <input type="text" placeholder="Usuario" required>
                 <input type="password" placeholder="Contraseña" required>
                 <input type="email" placeholder="Correo Electronico" required>
                 <input type="text" placeholder="Celular" required>
                 <input type="submit" value="Registrarse">
-             <?=$this->Form->end() ?> 
-        </div> -->
+            </form>
+        </div>
 
-      <!--   <div class="reset-password">
+        <div class="reset-password">
             <a href="#">Olvide mi contraseña?</a>
-        </div> -->
+        </div>
     </div>
 </body>
 </html>
- 

@@ -1,9 +1,15 @@
 <?php 
+use Cake\Datasource\ConnectionManager;
 
-$usuario=$_POST['usuario'];
+//$dsn = 'mysql://root@localhost/cooperativa';
+//ConnectionManager::config('default', ['url' => $dsn]);
+//$connection = ConnectionManager::get('default');
+
+
+/*$usuario=$_POST['usuario'];
 $clave=$_POST['clave'];
 
-$conexion=mysqli_connect("localhost", "admin", "admin", "cooperativa");
+//$conexion=mysqli_connect("localhost", "admin", "admin", "cooperativa");
 //$consulta="SELECT * FROM usuarios WHERE usuario='$usuario' and clave='$clave'"
 //$resultado=mysqli_query($conexion, $consulta);
 
@@ -13,4 +19,4 @@ if ($filas>0) {
 } else { echo "Error en la autenticacion" }
 
 mysqli_free_result($resultado);
-mysqli_close($conexion);
+mysqli_close($conexion);*/
