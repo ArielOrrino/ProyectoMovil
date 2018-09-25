@@ -394,20 +394,31 @@ fieldset legend {
     line-height: 2rem;
 }
 
-.form button[type="submit"] {
+.form button[type="submit"],
+.form button[type="button"]
+ {
     float: right;
     text-transform: uppercase;
     box-shadow: none;
+    margin-right: 250px;
 }
 
-.form button:hover, .form button:focus {
-    background: #BE840B;
+#bdonar  {
+    text-transform: uppercase;
+    box-shadow: none;
+    margin-left: 40%;
+}
+
+.form button:hover, .form button:focus, #bdonar:hover {
+    background: #000000;
     box-shadow: none;
 }
 
+/*Color horrible del boton*/
+/*
 button {
     background: #966600;
-}
+}*/
 
 div.message {
     text-align: center;

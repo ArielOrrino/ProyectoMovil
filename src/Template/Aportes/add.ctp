@@ -25,6 +25,6 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submitir')) ?>
-    <?php echo $this->Form->control('MercadoPago', ['type'=>'button','id' => 'boton', 'onClick'=>'guardarMonto()']);?>  
+    <?php echo $this->Form->button('MercadoPago', ['type'=>'button','id' => 'boton', 'onClick'=>'guardarMonto()']);?>  
     <?= $this->Form->end() ?>
 </div>
