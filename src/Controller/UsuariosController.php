@@ -34,7 +34,7 @@ class UsuariosController extends AppController
                 }
                 else 
                 {
-                    $this->Flash->errror('Datos incorrectos puto, me queres hackear?', ['key'=>'Auth']);
+                    $this->Flash->error('Datos incorrectos puto, me queres hackear?', ['key'=>'auth']);
                 }
             }
     }

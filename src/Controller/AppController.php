@@ -47,16 +47,26 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
             'authorize' => ['Controller'],
-            'authetincate' => ['Form' => [
+            'authenticate' => [
+                'Form' => [
                 'fields' => ['username' => 'usuario',
-                'password'=>'password']
+                'password'=>'password'
+            ]
             ]
             ],
-            'loginAction' => ['controller' => 'Pages',
-            'action' => 'login'],
+            'loginAction' => [
+                'controller' => 'Pages',
+                'action' => 'login'
+            ],
             'authError' => 'Ingrese sus datos sdasdasd',
-            'loginRedirect' => ['controller' => 'Pages', 'action' => 'home'],
-            'logoutRedirect' => ['controller' => 'Pages', 'action' => 'login']
+            'loginRedirect' => [
+                'controller' => 'asd', 
+                'action' => 'home'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'asd', 
+                'action' => 'login'
+            ]
             ]);       // $this->loadComponent('Csrf');
 
         /*

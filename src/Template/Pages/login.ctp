@@ -58,7 +58,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
         </div>
         <div class="formulario session" id='test'>
             <h2>Iniciar Sesión</h2>
-			<?=$this->Flash->render('Auth') ?>
+			<?=$this->Flash->render('auth') ?>
 			<?=$this->Form->create() ?>
             <fieldset>
                
