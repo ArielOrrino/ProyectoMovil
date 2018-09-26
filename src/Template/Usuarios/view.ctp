@@ -15,9 +15,8 @@
 
     </ul>
 </nav>
-<div class="usuarios view large-12 medium-8 columns content">
-    <h3><?= h($usuario->id_usuarios) ?></h3>
-    <table class="vertical-table">
+<div class="usuarios view large-9 medium-8 columns content">
+ <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Usuario') ?></th>
             <td><?= h($usuario->usuario) ?></td>
