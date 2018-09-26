@@ -8,10 +8,10 @@
 }
 
 body {
-	/*//background: url(../img/FRLP.jpg);*/
+	//background: url(../img/FRLP.jpg);
 	-webkit-background-size: cover;
-/*	background-size: cover;
-	background-attachment: fixed;*/
+	background-size: cover;
+	background-attachment: fixed;
 	font-family: Arial;
 }
 

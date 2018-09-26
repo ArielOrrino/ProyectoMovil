@@ -52,7 +52,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-    <body>
+    <body class='login'>
  <div class="contenedor-form" id='toggle'>
         <div class="toggle">
             <span>Crear Cuenta</span>   
