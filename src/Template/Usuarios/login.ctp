@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -6,6 +6,7 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Log\Log;
 
 $this->layout = false;
 
@@ -14,7 +15,7 @@ if (!Configure::read('debug')) :
         'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
     );
 endif;
-
+Configure::read('debug');
 $cakeDescription = 'Cooperativa alumnos UTN';?>
 
 <!DOCTYPE html>
@@ -58,21 +59,43 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
         </div>
         <div class="formulario session" id='test'>
             <h2>Iniciar Sesión</h2>
-			<?=$this->Flash->render('Auth') ?>
-			<?=$this->Form->create() ?>
-            <fieldset>
-               
+    
+            <?=$this->Flash->render('auth') ?>
+            <?=$this->Form->create() ?>
+         
+<!-- 
+    <form method="post" class="container form-signin" action="/usuarios/login">
+      <img class="mb-4" src="../../img/letter-b1.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="user" class="sr-only">Email address</label>
+      
+      <input id="user" name="user" class="form-control" placeholder="Usuario" required="" autofocus="" type="text">
+      <label for="password" class="sr-only">Password</label>
+      
+      <input id="password" name="password" class="form-control" placeholder="Contraseña" required="" type="password">
+      <div class="checkbox mb-3">
+        <label>
+          <input value="remember-me" type="checkbox"> Recordarme
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+      <p class="mt-5 mb-3 text-muted">BUENAS 2018</p><a href="../../../../">Inicio</a>
+    </form> -->
            
-            	<?= $this->Form->control('usuario', ['type'=>'text', 'placeholder' => 'usuario', 'label'=>false, 'required']) ?>
-                <!-- // <input type="text" placeholder="Usuario" name="usuario" required> -->
-                <?= $this->Form->control('password', ['type'=>'password', 'required', 'placeholder' => 'password', 'label'=>false,
+             <fieldset>
+               
+              
+                <?= $this->Form->control('usuario', ['id' => 'user', 'type'=>'text', 'name'=>'user','placeholder' => 'usuario', 'label'=>false, 'required']) ?>
+                <!-- // <input type="text" placeholder="user" name="user" required> -->
+                <?= $this->Form->control('password', ['type'=>'password', 'name' => 'password','id' => 'password','required', 'placeholder' => 'password', 'label'=>false,
                 'required']) ?>
               <!--   // <input type="password" placeholder="Contraseña" name="clave" required> -->
                 <?= $this->Form->button('Iniciar Sesion') ?>
 
                 <?= $this->Form->Html->link('Registrarse',['controller'=>'usuarios','action'=>'add'],['class'=>'button']) ?>
                 <!-- // <input type="submit" value="Iniciar Sesión"> -->
-                </fieldset>
+             
+                </fieldset> 
             <?=$this->Form->end() ?>
         </div>
 
@@ -80,7 +103,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
             <h2>Crea tu Cuenta</h2>
 
             <?=$this->Form->create() ?>
-                <input type="text" placeholder="Usuario" required>
+                <input type="text" placeholder="user" required>
                 <input type="password" placeholder="Contraseña" required>
                 <input type="email" placeholder="Correo Electronico" required>
                 <input type="text" placeholder="Celular" required>

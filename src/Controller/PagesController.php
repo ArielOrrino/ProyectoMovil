@@ -39,24 +39,7 @@ class PagesController extends AppController
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
 
-     public function login()
-    {
-         if ($this->request->is('post'))
-          {
-              $user= $this->Auth->identify();
-             if($user)
-                {
-                    echo 'entro por true';
-                    $this->Auth->setUser($user);
-                    return $this->redirect($this->Auth->redirectUrl());
-                }
-                else 
-                {
-                    echo 'entro por False';
-                    $this->Flash->error('Usuario o contraseña incorrectos, intente nuevamente', ['key'=>'auth']);
-                }
-            }
-    }
+ 
 
     public function display(...$path)
     {

@@ -27,6 +27,8 @@ class UsuariosController extends AppController
          if ($this->request->is('post'))
           {
               $user= $this->Auth->identify();
+              $this->log("funcion login");
+              $this->log($this->Auth->identify());
              if($user)
                 {
                     $this->Auth->setUser($user);
@@ -41,12 +43,12 @@ class UsuariosController extends AppController
 
 
 
-/*    public function index()
+    public function index()
     {
         $usuarios = $this->paginate($this->Usuarios);
 
         $this->set(compact('usuarios'));
-    }*/
+    }
 
     /**
      * View method

@@ -60,7 +60,7 @@ class UsuariosTable extends Table
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 32)
+            ->maxLength('password', 255)
             ->requirePresence('password', 'create')
             ->notEmpty('password');
 
@@ -93,5 +93,17 @@ class UsuariosTable extends Table
         $rules->add($rules->isUnique(['id_usuarios']));
 
         return $rules;
+    }
+
+     public function findAuth(\Cake\ORM\Query $query, array $options)
+    {
+    $query
+        ->find('all')
+        ->where(['autorizado' => true]);
+
+    return $query;
+    }
+    public function check($usuario,$pass){
+        return ((new DefaultPasswordHasher)->check($pass,$usuario->password));
     }
 }
