@@ -86,7 +86,8 @@ class AppController extends Controller
  public function beforeFilter(Event $event)
     {
 
-        //usuario sin loggear
+ //usuario sin loggear
+
 $this->Auth->allow(['index','display','login','home']);
 
 if(in_array($this->request->getParam('controller'),['Usuarios'])){
@@ -99,10 +100,27 @@ if(in_array($this->request->getParam('controller'),['Aportes'])){
                 $this->Auth->allow(['view']);
       }
     }
-
-    if($this->Auth->user('tipo_usuario') == 'A'){            
-                $this->Auth->allow(['index','display','login','home','add','delete','edit','view','confirm']);
+if($this->Auth->user('tipo_usuario') == ''){      
+    if(in_array($this->request->getParam('controller'),['Usuarios'])){      
+                $this->Auth->deny(['index','delete','edit','view']);
             }
+        } 
+
+//usuario admin
+
+if($this->Auth->user('tipo_usuario') == 'A'){            
+    $this->Auth->allow(['index','display','login','home','add','delete','edit','view','confirm']);
+ }
+
+//usuario común
+ 
+if($this->Auth->user('tipo_usuario') == 'C'){      
+    if(in_array($this->request->getParam('controller'),['Usuarios'])){      
+                $this->Auth->deny(['index','delete','edit','view']);
+            }
+ }
+
+   
             
         
 }

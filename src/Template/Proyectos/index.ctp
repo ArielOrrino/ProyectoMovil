@@ -18,7 +18,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('idproyectos') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nombre_proyecto') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('monto_necesario') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('fecha_creacion') ?></th>
@@ -30,7 +29,6 @@
         <tbody>
             <?php foreach ($proyectos as $proyecto): ?>
             <tr>
-                <td><?= $this->Number->format($proyecto->idproyectos) ?></td>
                 <td><?= h($proyecto->nombre_proyecto) ?></td>
                 <td><?= $this->Number->format($proyecto->monto_necesario) ?></td>
                 <td><?= h($proyecto->fecha_creacion) ?></td>

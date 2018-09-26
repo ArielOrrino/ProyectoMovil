@@ -83,9 +83,11 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         </a>            
                                                     </li>
                                                     <li>
+                                                        <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
                                                         <a href="../../usuarios">
                                                             <span>Usuarios</span>
                                                         </a>        
+                                                        <?php endif; ?>    
                                                     </li>
                                                     <li>
                                                         <a href="../../proyectos">

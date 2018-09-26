@@ -24,10 +24,6 @@
             <td><?= h($proyecto->nombre_proyecto) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Idproyectos') ?></th>
-            <td><?= $this->Number->format($proyecto->idproyectos) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Monto Necesario') ?></th>
             <td><?= $this->Number->format($proyecto->monto_necesario) ?></td>
         </tr>

@@ -7,6 +7,13 @@
 
 }
 
+.nav-line {
+    background-color: black;
+    opacity: 0.5;
+    margin-left: 100%;
+    margin-right: 100%;
+}
+
 progress {
   border: none;
   height: 3px;
