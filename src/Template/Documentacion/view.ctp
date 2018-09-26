@@ -7,10 +7,13 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
+ <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
+        <li><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('Editar Documentacion'), ['action' => 'edit', $documentacion->iddocumentacion]) ?> </li>
         <li><?= $this->Form->postLink(__('Borrar Documentacion'), ['action' => 'delete', $documentacion->iddocumentacion], ['confirm' => __('Esta seguro que desea eliminar la documentacion # {0}?', $documentacion->iddocumentacion)]) ?> </li>
+    <?php endif; ?>
         <li><?= $this->Html->link(__('Lista de Documentacion'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?> </li>
+        
     </ul>
 </nav>
 <div class="documentacion view large-9 medium-8 columns content">

@@ -7,8 +7,10 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
+    <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
         <li><?= $this->Html->link(__('Editar Aporte'), ['action' => 'edit', $aporte->idaportes]) ?> </li>
         <li><?= $this->Form->postLink(__('Borrar Aporte'), ['action' => 'delete', $aporte->idaportes], ['confirm' => __('Esta seguro que desea eliminar el aporte # {0}?', $aporte->idaportes)]) ?> </li>
+    <?php endif; ?>
         <li><?= $this->Html->link(__('Listar Aportes'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nuevo Aporte'), ['action' => 'add']) ?> </li>
     </ul>

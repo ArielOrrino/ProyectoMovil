@@ -31,8 +31,11 @@
                 <td><?= h($aporte->fecha_aporte) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $aporte->idaportes]) ?>
+                    
+               <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $aporte->idaportes]) ?>
                     <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $aporte->idaportes], ['confirm' => __('Esta seguro que desea eliminar el aporte # {0}?', $aporte->idaportes)]) ?>
+                <?php endif; ?>
                 </td>
             </tr>
             <?php endforeach; ?>

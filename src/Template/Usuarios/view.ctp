@@ -7,10 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
+        <?php if ($this->request->getSession()->read('Auth.User.usuario')==$usuario->usuario) : ?> 
         <li><?= $this->Html->link(__('Editar Usuario'), ['action' => 'edit', $usuario->id_usuarios]) ?> </li>
         <li><?= $this->Form->postLink(__('Borrar Usuario'), ['action' => 'delete', $usuario->id_usuarios], ['confirm' => __('Esta seguro que desea eliminar el usuario # {0}?', $usuario->id_usuarios)]) ?> </li>
+        <?php endif; ?>
         <li><?= $this->Html->link(__('Lista de Usuarios'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add']) ?> </li>
+
     </ul>
 </nav>
 <div class="usuarios view large-12 medium-8 columns content">

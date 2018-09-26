@@ -41,8 +41,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-        
-        $this->loadComponent('RequestHandler'); 
+        $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
                                      'authorize' => ['Controller'],
@@ -100,6 +99,12 @@ if(in_array($this->request->getParam('controller'),['Aportes'])){
                 $this->Auth->allow(['view']);
       }
     }
+
+    if($this->Auth->user('tipo_usuario') == 'A'){            
+                $this->Auth->allow(['index','display','login','home','add','delete','edit','view','confirm']);
+            }
+            
+        
 }
  /*   public function beforeFilter(Event $event)
     {

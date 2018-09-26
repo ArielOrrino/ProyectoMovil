@@ -7,7 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
-        <li><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?></li>
+        <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
+             <li><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?></li>
+        <?php endif; ?>
     </ul>
 </nav>
 <div class="documentacion index large-9 medium-8 columns content">
@@ -31,8 +33,10 @@
                 <td><?= h($documentacion->fecha_subida) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $documentacion->iddocumentacion]) ?>
+                <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $documentacion->iddocumentacion]) ?>
                     <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $documentacion->iddocumentacion], ['confirm' => __('Esta seguro que desea eliminar la documentacion # {0}?', $documentacion->iddocumentacion)]) ?>
+                <?php endif; ?>
                 </td>
             </tr>
             <?php endforeach; ?>

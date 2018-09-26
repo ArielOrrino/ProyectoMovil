@@ -7,7 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
+    <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
         <li><?= $this->Html->link(__('Nuevo Proyecto'), ['action' => 'add']) ?></li>
+      <?php endif; ?>
         <li><?= $this->Html->link(__('Votar Proyecto'), ['action' => 'votos']) ?></li>
     </ul>
 </nav>
@@ -36,8 +38,10 @@
                 <td><?= $this->Number->format($proyecto->cantidad_votos) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $proyecto->idproyectos]) ?>
+                <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $proyecto->idproyectos]) ?>
                     <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $proyecto->idproyectos], ['confirm' => __('Esta seguro que desea eliminar el proyecto # {0}?', $proyecto->idproyectos)]) ?>
+                <?php endif; ?>
                 </td>
             </tr>
             <?php endforeach; ?>

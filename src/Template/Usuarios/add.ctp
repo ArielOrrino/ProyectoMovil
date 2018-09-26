@@ -24,7 +24,7 @@
             echo $this->form->control('Mostrar contraseña', ['type'=>'checkbox','onClick'=>'myFunction()']);
             echo $this->Form->control('create_time', ['type' => 'hidden', 'value' => $now]);
             echo $this->Form->control('last_login', ['type' => 'hidden', 'value' => $now]);
-            echo $this->Form->control('tipo_usuario', ['type' => 'hidden','value' => "c",'maxlength'=>"1", 'size'=>"1"]);
+            echo $this->Form->control('tipo_usuario', ['type' => 'hidden','value' => "C",'maxlength'=>"1", 'size'=>"1"]);
             echo $this->Form->control('autorizado', ['type' => 'hidden', 'value' => "1"]);
         ?>
     </fieldset>

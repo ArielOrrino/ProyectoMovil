@@ -24,7 +24,7 @@
             echo $this->Form->control('fecha_aporte', ['type' => 'hidden', 'value' => $now]);            
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submitir')) ?>
+    <?= $this->Form->button(__('Efectivo')) ?>
     <?php echo $this->Form->button('MercadoPago', ['type'=>'button','id' => 'boton', 'onClick'=>'guardarMonto()']);?>  
     <?= $this->Form->end() ?>
 </div>

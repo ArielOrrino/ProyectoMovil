@@ -154,7 +154,6 @@ class UsuariosController extends AppController
               $this->log($data);
              $this->Auth->setUser($data);
              $this->log($this->Auth->user('voto'));
-
         }
         $this->redirect(array('controller' => 'Proyectos', 'action' => 'votos'));
     }

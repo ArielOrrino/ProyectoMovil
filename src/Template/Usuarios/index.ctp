@@ -26,8 +26,7 @@
         </thead>
         <tbody>
             <?php foreach ($usuarios as $usuario): ?>
-            <tr>
-                <td><?= $this->Number->format($usuario->id_usuarios) ?></td>
+            <tr>                
                 <td><?= h($usuario->usuario) ?></td>
                 <td><?= h($usuario->email) ?></td>
                 <td><input value= "<?= h($usuario->password) ?>" type ="password" id="myInput" readonly></td>
@@ -35,9 +34,11 @@
                 <td><?= h($usuario->create_time) ?></td>
                 <td><?= h($usuario->last_login) ?></td>
                 <td class="actions">
+                 <?php if ($this->request->getSession()->read('Auth.User.usuario')==$usuario->usuario) : ?> 
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $usuario->id_usuarios]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $usuario->id_usuarios]) ?>
                     <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $usuario->id_usuarios], ['confirm' => __('Esta seguro que desea eliminar el usuario # {0}?', $usuario->id_usuarios)]) ?>
+                <?php endif; ?>
                 </td>
             </tr>
             <?php endforeach; ?>
