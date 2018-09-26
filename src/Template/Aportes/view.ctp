@@ -17,7 +17,7 @@
     <h3><?= h($aporte->idaportes) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Idaportes') ?></th>
+            <th scope="row"><?= __('#Control') ?></th>
             <td><?= $this->Number->format($aporte->idaportes) ?></td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
             <td><?= $this->Number->format($aporte->monto) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('id proyecto') ?></th>
+            <th scope="row"><?= __('Proyecto destino') ?></th>
             <td><?= h($aporte->proyectos_idproyectos) ?></td>
         </tr>
         <tr>

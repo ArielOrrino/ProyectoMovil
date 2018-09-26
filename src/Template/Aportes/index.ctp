@@ -15,9 +15,9 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('idaportes') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('#Control') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('monto') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('proyectos_idproyectos') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Proyecto destino') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('fecha_aporte') ?></th> 
                 <th scope="col" class="actions"><?= __('Acciones') ?></th>
             </tr>

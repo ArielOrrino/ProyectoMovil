@@ -13,7 +13,7 @@
         <li><?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="usuarios view large-9 medium-8 columns content">
+<div class="usuarios view large-12 medium-8 columns content">
     <h3><?= h($usuario->id_usuarios) ?></h3>
     <table class="vertical-table">
         <tr>
@@ -27,22 +27,17 @@
         <tr>
             <th scope="row"><?= __('Password') ?></th>
             <td><input value= "<?= h($usuario->password) ?>" type ="password" id="myInput" maxlength="8" size="8" readonly>
-            <input type="checkbox" onclick="myFunction()"></td>                        
-        </tr>
+            <?php if ($this->request->getSession()->read('Auth.User.usuario')==$usuario->usuario) : ?> 
+            <input type="checkbox" onclick="myFunction()">
+            <?php endif; ?>  
+        </td>                        
+        </tr>        
         <tr>
-            <th scope="row"><?= __('Id Usuarios') ?></th>
-            <td><?= $this->Number->format($usuario->id_usuarios) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Tipo_usuario') ?></th>
-            <td><?= h($usuario->tipo_usuario) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Create Time') ?></th>
+            <th scope="row"><?= __('Fecha de Creacion') ?></th>
             <td><?= h($usuario->create_time) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Last Login') ?></th>
+            <th scope="row"><?= __('Ultimo Login') ?></th>
             <td><?= h($usuario->last_login) ?></td>
         </tr>
     </table>

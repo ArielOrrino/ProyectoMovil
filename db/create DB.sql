@@ -1,4 +1,3 @@
-
 -- -----------------------------------------------------
 -- Schema cooperativa
 -- -----------------------------------------------------
@@ -16,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`aportes` (
   PRIMARY KEY (`idaportes`),
   UNIQUE INDEX `idaportes_UNIQUE` (`idaportes` ASC) )
 ENGINE = InnoDB
-AUTO_INCREMENT = 10
+AUTO_INCREMENT = 0
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -34,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`proyectos` (
   PRIMARY KEY (`idproyectos`),
   UNIQUE INDEX `idproyectos_UNIQUE` (`idproyectos` ASC) )
 ENGINE = InnoDB
+AUTO_INCREMENT = 0
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -71,11 +71,10 @@ CREATE TABLE IF NOT EXISTS `cooperativa`.`usuarios` (
   `last_login` TIMESTAMP NULL DEFAULT NULL,
   `tipo_usuario` VARCHAR(1) NULL DEFAULT NULL,
   `autorizado` TINYINT(4) NULL DEFAULT NULL,
+  `voto` INT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id_usuarios`),
   UNIQUE INDEX `id_usuarios_UNIQUE` (`id_usuarios` ASC) )
 ENGINE = InnoDB
-AUTO_INCREMENT = 11
+AUTO_INCREMENT = 0
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
-
-

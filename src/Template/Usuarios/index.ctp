@@ -14,8 +14,7 @@
     <h3><?= __('Usuarios') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id_usuarios') ?></th>
+            <tr>                
                 <th scope="col"><?= $this->Paginator->sort('usuario') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
