@@ -91,6 +91,11 @@ if(in_array($this->request->getParam('controller'),['Usuarios'])){
                 $this->Auth->allow(['add']);
       }
     }
+if(in_array($this->request->getParam('controller'),['Aportes'])){
+            if(in_array($this->request->getParam('action'),['view'])){
+                $this->Auth->allow(['view']);
+      }
+    }
 }
  /*   public function beforeFilter(Event $event)
     {
