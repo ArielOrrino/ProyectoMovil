@@ -77,6 +77,11 @@ class UsuariosTable extends Table
             ->maxLength('tipo_usuario', 1)
             ->allowEmpty('tipo_usuario', 'create');
 
+         $validator
+            ->scalar('autorizado')
+            ->maxLength('autorizado', 1)
+            ->allowEmpty('autorizado', 'create');
+
         return $validator;
     }
 
@@ -98,8 +103,8 @@ class UsuariosTable extends Table
      public function findAuth(\Cake\ORM\Query $query, array $options)
     {
     $query
-        ->find('all')
-        ->where(['autorizado' => true]);
+        ->find('all');
+        
 
     return $query;
     }

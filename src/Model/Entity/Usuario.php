@@ -32,7 +32,8 @@ class Usuario extends Entity
         'password' => true,
         'tipo_usuario' => true,
         'create_time' => true,
-        'last_login' => true
+        'last_login' => true,
+        'autorizado' => true
     ];
 
     /**
