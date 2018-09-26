@@ -138,9 +138,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                             <h1>
                                                 <div class="auto-font-size cf">
                                                     <span class="styled-inline-text claim-default allura">
-                                                        <span>                                                          
-                                                            <em>Cooperatica de Alumnos</em>                                         
-                                                        </span>
+                                                        <span>Cooperativa de Alumnos</span>
                                                     </span>
                                                 </div>
                                                 <div class="auto-font-size cf">
