@@ -66,9 +66,8 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                  </div>
                                                 </div>            
                                                  <div class="logo-text">
-                                  <span class="logo-text-cell"><b>Cooperativa de alumnos Utn</b>&nbsp;Facultad Regional La plata</span>
-                                                 </div>
-        
+                    <span class="logo-text-cell"><b>Cooperativa de alumnos Utn</b>&nbsp;Facultad Regional La plata</span>
+                                                 </div>        
                                              </div>
                                         </div>
                                         <nav id="menu" role="navigation">
@@ -122,8 +121,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         <a href="/contacto/">
                                                             <span>Contacto</span>
                                                         </a>            
-                                                    </li>  
-                                                                                                        
+                                                    </li>                                                                
                                                 </ul>                                               
                                             </div>
                                         </nav>  
@@ -138,7 +136,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                             <h1>
                                                 <div class="auto-font-size cf">
                                                     <span class="styled-inline-text claim-default allura">
-                                                        <span>Cooperativa de Alumnos</span>
+                                                         <span>Cooperativa de Alumnos</span>
                                                     </span>
                                                 </div>
                                                 <div class="auto-font-size cf">

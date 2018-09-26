@@ -120,6 +120,12 @@ if($this->Auth->user('tipo_usuario') == 'C'){
             }
  }
 
+ if($this->Auth->user('tipo_usuario') == ''){      
+    if(in_array($this->request->getParam('controller'),['Usuarios'])){      
+                $this->Auth->deny(['index','delete','edit','view']);
+            }
+ }
+
    
             
         
