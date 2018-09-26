@@ -39,7 +39,7 @@ class UsuariosController extends AppController
                 else 
                 {
                     $this->log("FALSE");
-                    $this->Flash->error('Datos incorrectos puto, me queres hackear?');
+                    $this->Flash->error('Usuario y/o contraseña incorrectos, vuelva a intentar');
                 }
             }
     }
