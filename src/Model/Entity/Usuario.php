@@ -33,7 +33,8 @@ class Usuario extends Entity
         'tipo_usuario' => true,
         'create_time' => true,
         'last_login' => true,
-        'autorizado' => true
+        'autorizado' => true,
+        'voto' => true
     ];
 
     /**

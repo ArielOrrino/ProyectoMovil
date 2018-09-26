@@ -44,7 +44,6 @@ class AppController extends Controller
         
         $this->loadComponent('RequestHandler'); 
         $this->loadComponent('Flash');
-        $this->log("inicializando");
         $this->loadComponent('Auth',[
                                      'authorize' => ['Controller'],
                                      'loginAction' => 

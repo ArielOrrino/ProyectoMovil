@@ -82,6 +82,11 @@ class UsuariosTable extends Table
             ->maxLength('autorizado', 1)
             ->allowEmpty('autorizado', 'create');
 
+        $validator
+            ->scalar('voto')
+            ->maxLength('voto', 1)
+            ->allowEmpty('voto', 'create');
+
         return $validator;
     }
 

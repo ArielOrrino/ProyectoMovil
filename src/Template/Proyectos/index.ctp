@@ -8,6 +8,7 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
         <li><?= $this->Html->link(__('Nuevo Proyecto'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Votar Proyecto'), ['action' => 'votos']) ?></li>
     </ul>
 </nav>
 <div class="proyectos index large-9 medium-8 columns content">

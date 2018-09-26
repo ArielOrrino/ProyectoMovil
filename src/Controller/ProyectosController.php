@@ -105,14 +105,14 @@ class ProyectosController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function vote($id = null)
+    public function vote($idProyecto = null,$idUser=null)
     {
-        $proyecto = $this->Proyectos->get($id);
-
+        $proyecto = $this->Proyectos->get($idProyecto);
         $proyecto->set('cantidad_votos', $proyecto->cantidad_votos + 1);
-
-        $this->Proyectos->save($proyecto);
-        return $this->redirect(['action' => 'votos']);
+        $this->log($idProyecto);
+        $this->log($idUser);
+        $this->Proyectos->save($proyecto);     
+        $this->redirect(array('controller' => 'Usuarios', 'action' => 'actualizarVoto', $idUser,$proyecto->idproyectos));
     }
 
     public function votos()

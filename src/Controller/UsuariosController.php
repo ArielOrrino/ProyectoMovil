@@ -138,4 +138,24 @@ class UsuariosController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+     public function actualizarVoto($id = null,$voto=null)
+    {
+        $usuario = $this->Usuarios->get($id, [
+            'contain' => []
+        ]);
+
+         $usuario->set('voto', $voto);
+         $this->Usuarios->save($usuario);
+         $this->set(compact('usuario'));
+         $this->log($this->Auth->user('id_usuarios'));
+        $this->log($usuario->id_usuarios);
+         if ($this->Auth->user('id_usuarios') === $usuario->id_usuarios) {
+             $data = $usuario->toArray();
+              $this->log($data);
+             $this->Auth->setUser($data);
+             $this->log($this->Auth->user('voto'));
+
+        }
+        $this->redirect(array('controller' => 'Proyectos', 'action' => 'votos'));
+    }
 }

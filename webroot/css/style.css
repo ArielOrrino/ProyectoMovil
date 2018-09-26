@@ -7,6 +7,27 @@
 
 }
 
+progress {
+  border: none;
+  height: 3px;
+}
+
+progress::-webkit-progress-value {
+  background: blue;
+}
+
+.btn {
+    width: 70px;
+    height: 35px;
+    background-color: #008CBA;
+    border-color: #007095;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #007095;
+}
+
 body {
 /*	background: url(../img/FRLP.jpg);
 	-webkit-background-size: cover;

@@ -6,29 +6,6 @@
  */
 ?>
 
-<style>
-progress {
-  border: none;
-  height: 3px;
-}
-
-progress::-webkit-progress-value {
-  background: blue;
-}
-
-.btn {
-    width: 70px;
-    height: 35px;
-    background-color: #008CBA;
-    border-color: #007095;
-    color: white;
-}
-
-.btn:hover {
-    background-color: #007095;
-}
-</style>
-
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Modulos') ?></li>
@@ -49,7 +26,10 @@ foreach ($proyectos as $proyecto) {
     $votos_totales += $proyecto->cantidad_votos;
 }
 ?>
-
+  <?php 
+    // $this->log($this->Session->read('Auth.User'));
+  ?>
+   
 <div class="proyectos index large-9 medium-8 columns content">
     <h3><?= __('Proyectos') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -78,8 +58,15 @@ foreach ($proyectos as $proyecto) {
                 ?>" max="100"><?php echo $p ?></progress>
                 <br>
                 <?php
-                    echo $this->Form->create("Projects",array('url'=>'/proyectos/vote/'.$proyecto->idproyectos));
-                    echo $this->Form->input('Votar', array('type' => 'submit', 'class'=>'btn'));
+                   $yaVoto = $this->Session->read('Auth.User.voto');
+                    $usuarioLog = $this->Session->read('Auth.User.id_usuarios');
+                    echo $this->Form->create("Projects",array('url'=>'/proyectos/vote/'.$proyecto->idproyectos.'/'.$usuarioLog));                                            
+                    if ($yaVoto == 0) {
+                        echo $this->Form->input('Votar', array('type' => 'submit', 'class'=>'btn'));                      
+                    } else {
+                        echo $this->Form->input('Votar', array('type' => 'hidden', 'class'=>'btn'));
+                        $this->Flash->render("Gracias por haber votado");
+                    }
                     echo $this->Form->end();
                 ?>
                 </td>
