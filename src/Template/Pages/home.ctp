@@ -103,7 +103,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         </a>            
                                                     </li>
                                                     <?php 
-                                                    if ($this->Session->read('Auth.User.id_usuarios')=='') : ?> 
+                                                    if (($this->request->getSession()->read('Auth.User.id_usuarios'))=='') : ?> 
                                                        <li>
                                                         <a href="../Usuarios/Login">
                                                             <span>Login</span>

@@ -27,7 +27,7 @@ foreach ($proyectos as $proyecto) {
 }
 ?>
   <?php 
-    // $this->log($this->Session->read('Auth.User'));
+    // $this->log($this->request->getSession()->read('Auth.User'));
   ?>
    
 <div class="proyectos index large-9 medium-8 columns content">
@@ -58,13 +58,13 @@ foreach ($proyectos as $proyecto) {
                 ?>" max="100"><?php echo $p ?></progress>
                 <br>
                 <?php
-                   $yaVoto = $this->Session->read('Auth.User.voto');
-                    $usuarioLog = $this->Session->read('Auth.User.id_usuarios');
+                   $yaVoto = $this->request->getSession()->read('Auth.User.voto');
+                    $usuarioLog = $this->request->getSession()->read('Auth.User.id_usuarios');
                     echo $this->Form->create("Projects",array('url'=>'/proyectos/vote/'.$proyecto->idproyectos.'/'.$usuarioLog));                                            
                     if ($yaVoto == 0) {
-                        echo $this->Form->input('Votar', array('type' => 'submit', 'class'=>'btn'));                      
+                        echo $this->Form->button('Votar', array('type' => 'submit'));                      
                     } else {
-                        echo $this->Form->input('Votar', array('type' => 'hidden', 'class'=>'btn'));
+                        echo $this->Form->button('Votar', array('type' => 'hidden'));
                         $this->Flash->render("Gracias por haber votado");
                     }
                     echo $this->Form->end();
