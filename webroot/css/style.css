@@ -94,9 +94,12 @@ body {
 .contenedor-form h2 {
 	margin: 0 0 28px 0;
 	font-size: 20px;
-	font-weight: 400px;
 	line-height: 1px;
 } 
+
+#IniciarS {
+    
+}
 
 .contenedor-form input[type="text"],
 .contenedor-form input[type="password"],
@@ -218,7 +221,21 @@ header .header-title {
 }
 
 legend {
-    color:#15848F;
+    color:#be140b;
+}
+
+button, #registrarse {
+    background-color: #f08105 !important;
+    border-color: #f08105 !important;
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link1 {
+    color: #FFFFFF;
+    font-style: bold;
 }
 
 .row {
@@ -585,7 +602,7 @@ fieldset {
 }
 
 fieldset legend {
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #be140b;
     width: 100%;
     line-height: 2rem;
 }
