@@ -102,11 +102,20 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                             <span>Aportes</span>
                                                         </a>            
                                                     </li>
-                                                    <li>
+                                                    <?php 
+                                                    if ($this->Session->read('Auth.User.id_usuarios')=='') : ?> 
+                                                       <li>
                                                         <a href="../Usuarios/Login">
                                                             <span>Login</span>
                                                         </a>            
-                                                    </li> 
+                                                    </li>  
+                                                    <?php else : ?>
+                                                     <li>
+                                                        <a href="../Usuarios/Logout">
+                                                            <span>Logout</span>
+                                                        </a>            
+                                                    </li>                                                
+                                                    <?php endif; ?>                                                   
                                                     <li>
                                                         <a href="/contacto/">
                                                             <span>Contacto</span>

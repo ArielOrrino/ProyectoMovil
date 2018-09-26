@@ -48,7 +48,12 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                 <li><a href="../../aportes">Aportes</a></li>
                 <li><a href="../../proyectos">Proyectos</a></li>
                 <li><a href="../../documentacion">Documentacion</a></li>  
-                <li><a href="../Usuarios/login">Login</a></li>                  
+                <?php 
+                if ($this->Session->read('Auth.User.id_usuarios')=='') : ?> 
+                    <li><a href="../Usuarios/Login">Login</a></li>  
+                <?php else : ?>
+                    <li><a href="../Usuarios/Logout" class="logoutR">Usuario:<?php echo $this->Session->read('Auth.User.usuario')?>(Logout)</a></li>              
+                <?php endif; ?>                        
             </ul>
         </div>
     </nav>

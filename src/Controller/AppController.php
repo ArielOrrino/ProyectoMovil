@@ -56,6 +56,11 @@ class AppController extends Controller
                                         'controller' => 'pages', 
                                         'action' => 'index'
                                      ],
+                                     'logoutRedirect' => 
+                                     [
+                                        'controller' => 'pages', 
+                                        'action' => 'index'
+                                     ],
                                      'authenticate' => [
                                         'Form' => [
                                             'fields' => ['username' => 'usuario'],

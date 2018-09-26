@@ -35,7 +35,9 @@ body {
 /*	background-attachment: fixed;*/
 	font-family: Arial;
 }
-
+.logoutR {
+    float:right;
+}
 .contenedor-form {
 	position: relative;
 	background: rgba(0,0,0,.7);
