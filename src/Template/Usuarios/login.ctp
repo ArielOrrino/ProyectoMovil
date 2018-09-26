@@ -60,9 +60,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
         <div class="formulario session" id='test'>
             <h2>Iniciar Sesión</h2>
     
-            <?=$this->Flash->render('auth') ?>
-            <?=$this->Form->create() ?>
-         
+
 <!-- 
     <form method="post" class="container form-signin" action="/usuarios/login">
       <img class="mb-4" src="../../img/letter-b1.png" alt="" width="72" height="72">
@@ -81,17 +79,16 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       <p class="mt-5 mb-3 text-muted">BUENAS 2018</p><a href="../../../../">Inicio</a>
     </form> -->
-           
-             <fieldset>
-               
-              
-                <?= $this->Form->control('usuario', ['id' => 'user', 'type'=>'text', 'name'=>'user','placeholder' => 'usuario', 'label'=>false, 'required']) ?>
+            <?=$this->Flash->render('auth') ?>
+            <?=$this->Form->create() ?>
+         
+             <fieldset>               
+                <?= $this->Form->control('usuario', ['id' => 'usuario', 'type'=>'text', 'name'=>'usuario','placeholder' => 'usuario', 'label'=>false, 'required']) ?>
                 <!-- // <input type="text" placeholder="user" name="user" required> -->
                 <?= $this->Form->control('password', ['type'=>'password', 'name' => 'password','id' => 'password','required', 'placeholder' => 'password', 'label'=>false,
                 'required']) ?>
               <!--   // <input type="password" placeholder="Contraseña" name="clave" required> -->
                 <?= $this->Form->button('Iniciar Sesion') ?>
-
                 <?= $this->Form->Html->link('Registrarse',['controller'=>'usuarios','action'=>'add'],['class'=>'button']) ?>
                 <!-- // <input type="submit" value="Iniciar Sesión"> -->
              

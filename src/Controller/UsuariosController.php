@@ -29,16 +29,24 @@ class UsuariosController extends AppController
               $user= $this->Auth->identify();
               $this->log("funcion login");
               $this->log($this->Auth->identify());
+              $this->log($this->request->getData());
              if($user)
                 {
+                      $this->log("TRUE");
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl());
                 }
                 else 
                 {
+                    $this->log("FALSE");
                     $this->Flash->error('Datos incorrectos puto, me queres hackear?');
                 }
             }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
     }
 
 
