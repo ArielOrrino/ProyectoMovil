@@ -24,7 +24,9 @@
             echo $this->Form->control('fecha_aporte', ['type' => 'hidden', 'value' => $now]);            
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Efectivo')) ?>
+    <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?>
+        <?= $this->Form->button(__('Efectivo')) ?>
+    <?php endif; ?>
     <?php echo $this->Form->button('MercadoPago', ['type'=>'button','id' => 'boton', 'onClick'=>'guardarMonto()']);?>  
     <?= $this->Form->end() ?>
 </div>

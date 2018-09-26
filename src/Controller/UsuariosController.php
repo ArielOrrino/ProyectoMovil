@@ -26,19 +26,14 @@ class UsuariosController extends AppController
     {
          if ($this->request->is('post'))
           {
-              $user= $this->Auth->identify();
-              $this->log("funcion login");
-              $this->log($this->Auth->identify());
-              $this->log($this->request->getData());
+              $user= $this->Auth->identify();              
              if($user)
-                {
-                      $this->log("TRUE");
+               {                    
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl());
                 }
                 else 
-                {
-                    $this->log("FALSE");
+                {                    
                     $this->Flash->error('Usuario y/o contraseña incorrectos, vuelva a intentar');
                 }
             }

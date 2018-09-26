@@ -55,12 +55,10 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
     <body class='login'>
  <div class="contenedor-form" id='toggle'>
         <div class="toggle">
-            <span>Crear Cuenta</span>   
+            <a href="../../">Volver al inicio</a>   
         </div>
         <div class="formulario session" id='test'>
-            <h2>Iniciar Sesión</h2>
-    
-            <?=$this->Flash->render('auth') ?>
+            <h2>Iniciar Sesión</h2>            
             <?=$this->Form->create() ?>
          
              <fieldset>               
