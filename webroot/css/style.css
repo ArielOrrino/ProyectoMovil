@@ -8,10 +8,20 @@
 }
 
 .nav-line {
-    background-color: black;
-    opacity: 0.5;
-    margin-left: 100%;
-    margin-right: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-line a span {
+    color: #f08105 !important;
+}
+
+.nav-line a:hover span{
+    color: #FFFFFF !important;
+}
+
+.allura {
+    font-family: Josefix,Arial,sans-serif;
+    font-weight: 400;
 }
 
 progress {
@@ -170,13 +180,7 @@ body {
 	opacity: 1;
 }
 
-
-
-
-
 /*------------------------FIN MI CSS-------------------------------------------*/
-
-
 
 .disabled a,
 a.disabled {
@@ -184,15 +188,15 @@ a.disabled {
 }
 
 a:hover {
-    color: #15848F;
+    color: #000000;
 }
 
 a {
-    color: #1798A5;
+    color: #f08105;
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: #000000;
 }
 
 .side-nav li a:not(.button):hover {
@@ -499,20 +503,32 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+    padding: 5px;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.top-bar-section ul li>a {
+    font-size: .95rem !important;
+    text-align: center;
+    line-height: 2.2 !important;
+    margin-right: 15px;
+    text-transform: uppercase;
+    font-family: inherit; !important;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #308e97;
-    background: #308e97;
+    background-color: #f08105;
+    background: #f08105;
+
 }
 
 .side-nav li.heading {
-    color: #1798A5;
+    color: #f08105;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -553,9 +569,9 @@ table thead tr {
 table tr th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #be140b;
     text-align: left;
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #be140b;
 }
 
 table tr:nth-of-type(even) {
