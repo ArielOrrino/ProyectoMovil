@@ -13,18 +13,19 @@
 <div class="usuarios form large-9 medium-8 columns content">
     <?= $this->Form->create($usuario) ?>
     <fieldset>
-        <legend><?= __('Agregar Usuario') ?></legend>
+        <legend><?= __('Registro') ?></legend>
         <?php
        date_default_timezone_set("America/Argentina/Buenos_Aires");
         $now = date('Y-m-d H:i:s',Time());
 
             echo $this->Form->control('usuario');
             echo $this->Form->control('email');
-            echo $this->Form->control('password', ['maxlength'=>"8", 'size'=>"8", 'id'=>'myInput']);
+            echo $this->Form->control('password', ['id'=>'myInput']);
             echo $this->form->control('Mostrar contraseña', ['type'=>'checkbox','onClick'=>'myFunction()']);
             echo $this->Form->control('create_time', ['type' => 'hidden', 'value' => $now]);
             echo $this->Form->control('last_login', ['type' => 'hidden', 'value' => $now]);
-            echo $this->Form->control('tipo_usuario', ['maxlength'=>"1", 'size'=>"1"]);
+            echo $this->Form->control('tipo_usuario', ['type' => 'hidden','value' => "c",'maxlength'=>"1", 'size'=>"1"]);
+            echo $this->Form->control('autorizado', ['type' => 'hidden', 'value' => "1"]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submitir')) ?>

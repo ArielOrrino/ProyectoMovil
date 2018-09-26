@@ -16,4 +16,4 @@ function guardarMonto() {
 function redirigirMp(MD) {
 	    window.location = "confirm/"+MD;
 	}
-                 
+

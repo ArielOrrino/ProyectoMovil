@@ -47,7 +47,8 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                 <li><a href="../../usuarios">Usuarios</a></li>
                 <li><a href="../../aportes">Aportes</a></li>
                 <li><a href="../../proyectos">Proyectos</a></li>
-                <li><a href="../../documentacion">Documentacion</a></li>
+                <li><a href="../../documentacion">Documentacion</a></li>  
+                <li><a href="../Usuarios/login">Login</a></li>                  
             </ul>
         </div>
     </nav>

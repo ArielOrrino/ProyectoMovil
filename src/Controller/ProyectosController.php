@@ -104,4 +104,21 @@ class ProyectosController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function vote($id = null)
+    {
+        $proyecto = $this->Proyectos->get($id);
+
+        $proyecto->set('cantidad_votos', $proyecto->cantidad_votos + 1);
+
+        $this->Proyectos->save($proyecto);
+        return $this->redirect(['action' => 'votos']);
+    }
+
+    public function votos()
+    {
+        $proyectos = $this->paginate($this->Proyectos);
+
+        $this->set(compact('proyectos'));
+    }
 }

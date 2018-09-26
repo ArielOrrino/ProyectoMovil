@@ -18,6 +18,39 @@ class UsuariosController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
+    public function home() {
+         $this->render();
+    }
+
+    public function login()
+    {
+         if ($this->request->is('post'))
+          {
+              $user= $this->Auth->identify();
+              $this->log("funcion login");
+              $this->log($this->Auth->identify());
+              $this->log($this->request->getData());
+             if($user)
+                {
+                      $this->log("TRUE");
+                    $this->Auth->setUser($user);
+                    return $this->redirect($this->Auth->redirectUrl());
+                }
+                else 
+                {
+                    $this->log("FALSE");
+                    $this->Flash->error('Datos incorrectos puto, me queres hackear?');
+                }
+            }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
+    }
+
+
+
     public function index()
     {
         $usuarios = $this->paginate($this->Usuarios);
@@ -104,4 +137,5 @@ class UsuariosController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
 }

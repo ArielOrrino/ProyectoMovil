@@ -83,7 +83,7 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         </a>            
                                                     </li>
                                                     <li>
-                                                        <a href="../../usuarios"">
+                                                        <a href="../../usuarios">
                                                             <span>Usuarios</span>
                                                         </a>        
                                                     </li>
@@ -103,10 +103,16 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                         </a>            
                                                     </li>
                                                     <li>
+                                                        <a href="../Usuarios/Login">
+                                                            <span>Login</span>
+                                                        </a>            
+                                                    </li> 
+                                                    <li>
                                                         <a href="/contacto/">
                                                             <span>Contacto</span>
                                                         </a>            
-                                                    </li>                                                   
+                                                    </li>  
+                                                                                                        
                                                 </ul>                                               
                                             </div>
                                         </nav>  

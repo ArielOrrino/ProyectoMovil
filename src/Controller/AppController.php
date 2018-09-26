@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -40,16 +41,65 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
+        
+        $this->loadComponent('RequestHandler'); 
         $this->loadComponent('Flash');
+        $this->log("inicializando");
+        $this->loadComponent('Auth',[
+                                     'authorize' => ['Controller'],
+                                     'loginAction' => 
+                                     [
+                                        'controller' => 'usuarios',
+                                        'action' => 'login'
+                                     ],
+                                     'loginRedirect' => 
+                                     [
+                                        'controller' => 'pages', 
+                                        'action' => 'index'
+                                     ],
+                                     'authenticate' => [
+                                        'Form' => [
+                                            'fields' => ['username' => 'usuario'],
+                                            'userModel' => 'Usuarios',
+                                            'finder'=> 'auth'
+                                            ]
+                                        ],
+                                     'storage' => 'Session',
+                                     'unauthorizedRedirect' => ['controller' => 'Pages', 'action' => 'display']
+                            ]);  
 
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
-        //$this->loadComponent('Security');
+     //   $this->loadComponent('Security');
     }
+
+    public function isAuthorized($user) {
+        return true;
+    }
+ 
+
+ public function beforeFilter(Event $event)
+    {
+
+        //usuario sin loggear
+$this->Auth->allow(['index','display','login','home']);
+
+if(in_array($this->request->getParam('controller'),['Usuarios'])){
+            if(in_array($this->request->getParam('action'),['add'])){
+                $this->Auth->allow(['add']);
+      }
+    }
+if(in_array($this->request->getParam('controller'),['Aportes'])){
+            if(in_array($this->request->getParam('action'),['view'])){
+                $this->Auth->allow(['view']);
+      }
+    }
+}
+ /*   public function beforeFilter(Event $event)
+    {
+    parent::beforeFilter($event);
+    $this->Auth->allow();
+    }*/
 }
