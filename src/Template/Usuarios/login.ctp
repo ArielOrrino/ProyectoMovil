@@ -55,20 +55,21 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
     <body class='login'>
  <div class="contenedor-form" id='toggle'>
         <div class="toggle">
-            <a href="../../">Volver al inicio</a>   
+            <a class="link1" href="../../">Volver al inicio</a>   
         </div>
         <div class="formulario session" id='test'>
-            <h2>Iniciar Sesión</h2>            
+            <h2 id="IniciarS">Iniciar Sesión</h2>            
             <?=$this->Form->create() ?>
          
              <fieldset>               
-                <?= $this->Form->control('usuario', ['id' => 'usuario', 'type'=>'text', 'name'=>'usuario','placeholder' => 'usuario', 'label'=>false, 'required']) ?>
+                <?= $this->Form->control('usuario', ['id' => 'usuario', 'type'=>'text', 'name'=>'usuario','placeholder' => 'Usuario', 'label'=>false, 'required']) ?>
           
-                <?= $this->Form->control('password', ['type'=>'password', 'name' => 'password','id' => 'password','required', 'placeholder' => 'password', 'label'=>false,
+                <?= $this->Form->control('password', ['type'=>'password', 'name' => 'password','id' => 'password','required', 'placeholder' => 'Password', 'label'=>false,
                 'required']) ?>
-
+                <div id="botoneslog">
                 <?= $this->Form->button('Iniciar Sesion') ?>
-                <?= $this->Form->Html->link('Registrarse',['controller'=>'usuarios','action'=>'add'],['class'=>'button']) ?>             
+                <?= $this->Form->Html->link('Registrarse',['controller'=>'usuarios','action'=>'add'],['class'=>'button', 'id' => 'registrarse']) ?>             
+                </div>
                 </fieldset> 
             <?=$this->Form->end() ?>
         </div>
