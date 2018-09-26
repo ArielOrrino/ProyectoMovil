@@ -61,18 +61,22 @@ foreach ($proyectos as $proyecto) {
                    $yaVoto = $this->request->getSession()->read('Auth.User.voto');
                     $usuarioLog = $this->request->getSession()->read('Auth.User.id_usuarios');
                     echo $this->Form->create("Projects",array('url'=>'/proyectos/vote/'.$proyecto->idproyectos.'/'.$usuarioLog));                                            
-                    if ($yaVoto === '0') {
+                    if ($yaVoto == 0) {
                         $this->log("true");
                         $this->log($yaVoto);
-                        echo $this->Form->button('Votar', array('type' => 'submit'));                      
-                    
-                        echo "Gracias por haber votado!";
+                        echo $this->Form->button('Votar', array('type' => 'submit'));
+                        
                     }
                     echo $this->Form->end();
                 ?>
                 </td>
             </tr>
             <?php endforeach; ?>
+            <?php
+             if (!$yaVoto == 0) {
+                 echo "Gracias por haber votado!";
+             }
+             ?>
         </tbody>
     </table>
 
