@@ -82,7 +82,7 @@ class UsuariosController extends AppController
             if ($this->Usuarios->save($usuario)) {
                 $this->Flash->success(__('Usuario Grabado con exito.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'pages','action' => 'home']);
             }
             $this->Flash->error(__('El usuario no pudo ser grabado.'));
         }
