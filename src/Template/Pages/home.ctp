@@ -103,6 +103,11 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
                                                             <span>Aportes</span>
                                                         </a>            
                                                     </li>
+                                                    <li>
+                                                        <a href="../../buscador">
+                                                            <span>Buscador</span>
+                                                        </a>            
+                                                    </li>
                                                     <?php 
                                                     if (($this->request->getSession()->read('Auth.User.id_usuarios'))=='') : ?> 
                                                        <li>

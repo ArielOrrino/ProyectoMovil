@@ -228,14 +228,14 @@ legend {
     color:#be140b;
 }
 
-button, #registrarse {
+/*  button, #registrarse {          queria evitar el boton naranja trol
     background-color: #f08105 !important;
     border-color: #f08105 !important;
     margin-right: 30px;
     margin-left: 20px;
     margin-top: 20px;
     text-align: center;
-}
+}*/
 
 .link1 {
     color: #FFFFFF;
@@ -750,3 +750,4 @@ table td {
     vertical-align: top;
     word-break: break-all;
 }
+

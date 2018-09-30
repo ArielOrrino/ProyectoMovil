@@ -4,28 +4,25 @@
  * @var \App\Model\Entity\Proyecto[]|\Cake\Collection\CollectionInterface $proyectos
  */
 ?>
-<br>
-<br>
 
-<!-- NVAN RESPONSIVE -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><?= __('Modulos') ?></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-     <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?>     
-     <li class="nav-item nav-link"><?= $this->Html->link(__('Nuevo Proyecto'), ['action' => 'add']) ?></li>
-     <?php endif; ?>
-     <li class="nav-item nav-link"><?= $this->Html->link(__('Votar Proyecto'), ['action' => 'votos']) ?></li>
-    </div>
-  </div>
+
+
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+
+
+    <ul class="side-nav">
+        <li class="heading"><?= __('Modulos') ?></li>
+    <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
+        <li><?= $this->Html->link(__('Nuevo Proyecto'), ['action' => 'add']) ?></li>
+      <?php endif; ?>
+        <li><?= $this->Html->link(__('Votar Proyecto'), ['action' => 'votos']) ?></li>
+    </ul>
 </nav>
-<!-- NVAN RESPONSIVE -->
 
-<br>
-    <center><h3><?= __('Proyectos') ?></h3></center>
+
+
+<div class="proyectos index large-9 medium-8 columns content">
+    <h3><?= __('Proyectos') ?></h3>
     <div class="table-responsive-sm">
     <table class="table table-sm table-bordered" cellpadding="0" cellspacing="0">
         <thead>
@@ -43,7 +40,7 @@
             <tr>
                 <td><?= h($proyecto->nombre_proyecto) ?></td>
                 <td><?= $this->Number->format($proyecto->monto_necesario) ?></td>
-                <td><?= h($proyecto->feScha_creacion) ?></td>
+                <td><?= h($proyecto->fecha_creacion) ?></td>
                 <td><?= h($proyecto->fecha_finalizado) ?></td>
                 <td><?= $this->Number->format($proyecto->cantidad_votos) ?></td>
                 <td class="actions">
@@ -57,7 +54,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
     </div>
     <div class="paginator">
         <ul class="pagination">
@@ -69,5 +65,4 @@
         </ul>
        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} en total')]) ?></p>
     </div>
-
- 
+</div>

@@ -24,46 +24,63 @@ $cakeDescription = 'Cooperativa alumnos UTN';?>
         <?= $this->fetch('title') ?>
     </title>
      <?= $this->Html->meta('icon') ?> 
-
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
-
     <?= $this->Html->script('funciones.js') ?>
-
     <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
+    <?= $this->fetch('css') ?> 
     <?= $this->fetch('script') ?>
+    <!-- BOOTSTRAP -->
+    <?= $this->Html->css('bootstrap.css') ?>   
+    <?= $this->Html->script('jquery.js') ?>
+    <?= $this->Html->script('bootstrap.js') ?>
+    <?= $this->Html->script('bootstrap.bundle.js') ?>  
+    <!-- BOOTSTRAP -->
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="left">
-                <li><a href="../../">Inicio</a></li>
-                <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
-                    <li><a href="../../usuarios">Usuarios</a></li>
-                <?php endif; ?>    
-                <li><a href="../../aportes">Aportes</a></li>
-                <li><a href="../../proyectos">Proyectos</a></li>
-                <li><a href="../../documentacion">Documentacion</a></li>  
-                <?php 
-                if ($this->request->getSession()->read('Auth.User.id_usuarios')=='') : ?> 
-                    <li><a href="../Usuarios/Login">Login</a></li>  
-                <?php else : ?>
-                    <li><a href="../Usuarios/Logout" class="logoutR">Usuario:<?php echo $this->request->getSession()->read('Auth.User.usuario')?>(Logout)</a></li>              
-                <?php endif; ?>                        
-            </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
+
+ <!-- NVAR PRINCIPAL DEL SITIO -->
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+ <div class="container">
+ <a class="navbar-brand js-scroll-trigger" href="#"><?= $this->fetch('title') ?></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../">Inicio</a></li>
+     <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../usuarios">Usuarios</a></li><?php endif; ?>
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../aportes">Aportes</a></li>
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../proyectos">Proyectos</a></li>
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../documentacion">Documentacion</a></li>
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../buscador">Buscador</a></li>  
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../contacto">Contacto</a></li>      
+     <?php if ($this->request->getSession()->read('Auth.User.id_usuarios')=='') : ?> 
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../Usuarios/Login">Login</a></li>  
+     <?php else : ?>
+     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../Usuarios/Logout" class="logoutR">Usuario: <?php echo $this->request->getSession()->read('Auth.User.usuario')?>(Logout)</a></li>              
+     <?php endif; ?>       
+     </ul>
+     </div>
     </div>
-    <footer>
-    </footer>
+</nav>
+
+<!-- TERMINA EL NVAR DEL SITIO -->
+
+<br>
+<br>
+<?= $this->Flash->render() ?>
+<?= $this->fetch('content') ?>
+</div>
+</div>
+
+    
+ <?= $this->fetch('jquery.js'); ?> <!-- Se invoca al Script --> 
+ <?= $this->fetch('bootstrap.js'); ?> <!-- Se invoca al Script --> 
+ 
+ <footer>
+ </footer>
 </body>
 </html>

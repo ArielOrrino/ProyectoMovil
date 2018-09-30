@@ -4,12 +4,27 @@
  * @var \App\Model\Entity\Usuario[]|\Cake\Collection\CollectionInterface $usuarios
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Modulos') ?></li>
-        
-    </ul>
+<br>
+<br>
+<center>
+<!-- NVAN RESPONSIVE -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><?= __('Modulos') ?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+     <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?>     
+     <li class="nav-item nav-link"><?= $this->Html->link(__('Nuevo Proyecto'), ['action' => 'add']) ?></li>
+     <?php endif; ?>
+     <li class="nav-item nav-link"><?= $this->Html->link(__('Votar Proyecto'), ['action' => 'votos']) ?></li>
+    </div>
+  </div>
 </nav>
+<!-- NVAN RESPONSIVE -->
+
+
 <div class="usuarios index large-9 medium-8 columns content">
     <h3><?= __('Usuarios') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -55,3 +70,4 @@
         <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} en total')]) ?></p>
     </div>
 </div>
+</center>
