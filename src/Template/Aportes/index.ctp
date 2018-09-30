@@ -4,13 +4,24 @@
  * @var \App\Model\Entity\Aporte[]|\Cake\Collection\CollectionInterface $aportes
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Modulos') ?></li>
-        <li><?= $this->Html->link(__('Nuevo Aporte'), ['action' => 'add']) ?></li>
-    </ul>
+<br>
+<br>
+<!-- NVAR RESPONSIVE -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><?= __('Modulos') ?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">        
+     <li class="nav-item nav-link"><?= $this->Html->link(__('Nuevo Aporte'), ['action' => 'add']) ?></li>
+    </div>
+  </div>
 </nav>
-           <?php $totalD = 0;
+<!-- NVAR RESPONSIVE -->
+
+
+              <?php $totalD = 0;
                  $totalU = 0;
                  $total = 0;
                foreach ($aportes as $aporte): 
@@ -23,7 +34,7 @@
                      $total = $total + $aporte->monto;
                 }
             endforeach; ?>
-<div class="aportes index large-9 medium-8 columns content">
+<div align="center">
     <h3><?= __('Aportes') ?></h3>
     <span>Total para proximo proyecto: $</span><?php echo $totalD ?>  <span>  Total utilizado: $</span><?php echo $totalU ?>
     <span>Total Donado historico: $</span><?php echo $total ?>

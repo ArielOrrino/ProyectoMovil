@@ -4,15 +4,25 @@
  * @var \App\Model\Entity\Documentacion[]|\Cake\Collection\CollectionInterface $documentacion
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Modulos') ?></li>
-        <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?> 
-             <li><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?></li>
-        <?php endif; ?>
-    </ul>
+<br>
+<br>
+<!-- NVAR RESPONSIVE -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><?= __('Modulos') ?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+     <?php if ($this->request->getSession()->read('Auth.User.tipo_usuario')=='A') : ?>     
+     <li class="nav-item nav-link"><?= $this->Html->link(__('Nueva Documentacion'), ['action' => 'add']) ?></li>
+     <?php endif; ?>     
+    </div>
+  </div>
 </nav>
-<div class="documentacion index large-9 medium-8 columns content">
+<!-- NVAR RESPONSIVE -->
+
+<div align="center">
     <h3><?= __('Documentacion') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
