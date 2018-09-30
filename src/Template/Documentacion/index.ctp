@@ -21,6 +21,7 @@
   </div>
 </nav>
 <!-- NVAR RESPONSIVE -->
+<br>
 
 <div align="center">
     <h3><?= __('Documentacion') ?></h3>

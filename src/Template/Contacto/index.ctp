@@ -1,6 +1,6 @@
  <br>
  <br>  
- <div class="row"> 
+ <div class="row" align="center"> 
    
  <div class="col">
  <form>  
