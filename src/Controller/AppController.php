@@ -17,7 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-
+use \Crud\Controller\ControllerTrait;
 
 /**
  * Application Controller
@@ -44,6 +44,7 @@ class AppController extends Controller
         parent::initialize();
         $this->loadComponent('RequestHandler', ['enableBeforeRedirect' => false]);
         $this->loadComponent('Flash');
+        $this->loadComponent('Crud.Crud', ['actions' => ['Crud.Index']]);
         $this->loadComponent('Auth',[
                                      'authorize' => ['Controller'],
                                      'loginAction' => 
@@ -91,6 +92,8 @@ class AppController extends Controller
 
 $this->Auth->allow(['index','display','login','home']);
 
+$this->Crud->mapAction('index', 'Crud.Index');
+
 if(in_array($this->request->getParam('controller'),['Usuarios'])){
             if(in_array($this->request->getParam('action'),['add'])){
                 $this->Auth->allow(['add']);
@@ -131,9 +134,5 @@ if($this->Auth->user('tipo_usuario') == 'C'){
             
         
 }
- /*   public function beforeFilter(Event $event)
-    {
-    parent::beforeFilter($event);
-    $this->Auth->allow();
-    }*/
+ 
 }
